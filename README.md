@@ -22,7 +22,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You can implement command classes such as:
+
+```ruby
+class RegisterUserCommand
+  include Cqslight::Command
+
+  def initialize(params)
+  end
+
+  def run
+    # TODO: You need to implement a command process.
+  end
+end
+```
+
+and use it by such following code.
+
+```ruby
+class UsersController < ActionController
+  def create
+    command = RegisterUserCommand.run(params)
+    if command.success?
+      render
+    else
+      render :new
+    end
+  end
+end
+```
 
 ## Development
 

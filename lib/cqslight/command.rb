@@ -1,3 +1,6 @@
+require 'active_support'
+require 'active_model'
+
 module Cqslight::Command
   extend ActiveSupport::Concern
   include ActiveModel::Model
